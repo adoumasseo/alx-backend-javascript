@@ -23,7 +23,7 @@ function countStudents(path) {
       console.log(`Number of students: ${arrayStudents.length}`);
       studentStatsKeys = Object.keys(studentStats);
       studentStatsKeys.forEach((element) => {
-        console.log(`Number of students in ${element}: ${studentStats[element].join(', ')}`);
+        console.log(`Number of students in ${element}: ${studentStats[element].length}. List: ${studentStats[element].join(', ')}`);
       });
     }
   } catch (err) {
