@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 
-function countStudents(path) {
+function readDatabase(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, { encoding: 'utf8', flag: 'r' }, (err, students) => {
       if (err) {
@@ -18,7 +18,6 @@ function countStudents(path) {
             studentStats[course] = [...studentStats[course], studentInfo[0]];
           }
         });
-        console.log(studentStats);
         console.log(`Number of students: ${arrayStudents.length}`);
         Object.keys(studentStats).forEach((key) => {
           console.log(
@@ -31,4 +30,4 @@ function countStudents(path) {
   });
 }
 
-module.exports = countStudents;
+module.exports = readDatabase;
